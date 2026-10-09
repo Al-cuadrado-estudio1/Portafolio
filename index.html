@@ -844,4 +844,16 @@ document.addEventListener('click',e=>{const c=e.target.closest('.chip');if(c){c.
 <script>document.querySelectorAll('img').forEach(i=>{i.decoding='async'});</script>
 
 
-</body></html>
+<style id="movil-fix">
+@media(max-width:860px){
+  /* Goiplasts / Quiserma: una sola columna para que las piezas ocupen todo el ancho */
+  .case-goi,.case-qui{grid-template-columns:1fr!important}
+  .case-qui .case-h{order:1!important}.case-qui .case-pin{order:2!important}
+  .case-polo{grid-template-columns:1fr 1fr!important;gap:10px!important;align-items:center!important}
+  .case-polo .card:nth-child(2){margin:0!important;max-width:none!important;width:100%}
+  .case-polo .card img{width:100%}
+  /* Botones Goiplasts / Quiserma / Infinity en una sola línea */
+  .pills{flex-wrap:nowrap!important;gap:6px!important}
+  .pills a{flex:0 1 auto;white-space:nowrap;font-size:clamp(.5rem,2.7vw,.78rem)!important;letter-spacing:.05em!important;padding:11px clamp(9px,3vw,22px)!important}
+}
+</style></body></html>
