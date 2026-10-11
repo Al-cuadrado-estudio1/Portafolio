@@ -1076,4 +1076,190 @@ h2.pre,h2.pre em,h2.pre span,.idx .n{font-size:var(--t-title)!important}
 .cover-text p.una-linea{white-space:nowrap}
 }
 </style>
+<style id="escritorio-compacto">
+/* Escritorio (≥1000px): secciones más juntas y compactas, menos scroll entre una y otra. El móvil no se toca. */
+@media(min-width:1000px){
+/* Espaciado vertical general */
+.sec{padding-block:clamp(36px,3.6vw,60px) clamp(36px,3.6vw,56px)!important}
+.chap{padding-block:clamp(26px,2.8vw,44px)!important}
+.case-sec{padding-block:clamp(24px,2.6vw,40px)!important}
+.social-head{padding-block:clamp(34px,3.4vw,54px) clamp(16px,2vw,30px)!important}
+#redes{padding-bottom:clamp(16px,2vw,30px)!important}
+.corp{padding-block:clamp(34px,3.4vw,54px) clamp(16px,2vw,30px)!important}
+.contact{padding-block:clamp(50px,5vw,80px) clamp(30px,3vw,50px)!important}
+.kicker{margin-bottom:12px!important}
+.chap-title{margin-bottom:clamp(8px,1.4vw,18px)!important}
+.tabs{margin-top:0!important}
+
+/* Trabajo / índice 01-02-03 */
+.cover{overflow:hidden;height:calc(min(100vw,1500px)*2144/1600*.875)}
+/* Cuadro de Softwares al lado del texto de Contacto, sin tapar nada */
+.cover .cc-win{left:38%!important;top:74.2%!important;width:25%!important}
+#trabajo{padding-top:clamp(18px,2vw,30px)!important}
+.work .wrap{row-gap:0}
+.idx{margin-top:clamp(60px,6.4vw,96px)!important}
+.idx a{min-height:clamp(112px,12.5vw,176px)!important;padding-block:clamp(12px,1.6vw,22px)!important}
+.idx a+a{margin-top:calc(clamp(112px,12.5vw,176px) * -.36)!important}
+.idx a:nth-child(n) .n{font-size:clamp(2rem,4.4vw,3.6rem)}
+.idx a:nth-child(n) .t{height:clamp(36px,4.8vw,58px)}
+
+/* Branding */
+.brand-top{gap:clamp(16px,3vw,40px)}
+.brand .logo-big{width:min(100%,520px)}
+.brand .cap{max-width:46ch;margin-top:10px}
+.merch{grid-template-columns:repeat(12,1fr);margin-top:clamp(20px,2.6vw,36px);gap:clamp(10px,1.2vw,18px)}
+.m-shirts,.m-books,.m-open,.m-termos,.m-pal,.m-card{grid-column:span 4!important}
+.m-pal .chip{min-height:0!important;height:100%}
+.m-pal{min-height:clamp(220px,24vw,360px)}
+.m-pal .label{display:none}
+
+/* Redes: VEN369 */
+/* Tiras de historias: ocupan el espacio vacío en vez de quedar sueltas a la izquierda */
+.c-ven .wrap{display:grid;grid-template-columns:.8fr 1.2fr;column-gap:clamp(12px,2vw,30px);align-items:center}
+.c-ven .ven-stage{display:contents}
+.c-ven .ven-btn{grid-column:1;grid-row:1;align-self:end}
+.c-ven .ven-phones{grid-column:2;grid-row:1/3}
+.c-ven .rail{grid-column:1;grid-row:2;align-self:start}
+.c-ven .all{grid-column:1/-1}
+.c-mot .wrap{display:grid;grid-template-columns:1.35fr .65fr;column-gap:clamp(12px,2vw,28px);align-items:start}
+.c-mot .chap-title{grid-column:1/-1}
+.c-mot .mot-stage{display:contents}
+.c-mot .mot-posts{grid-column:1;grid-row:2/4}
+.c-mot .all{grid-column:1/-1}
+.c-ven .rail{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1vw,14px);overflow:visible;margin-inline:0;padding:0 0 4px}
+.c-ven .rail .zoom img{height:auto;width:100%}
+
+.ven-phones{min-height:clamp(360px,40vw,560px)}
+.ven-phones .feed-phone{width:clamp(170px,19vw,270px)}
+.ven-phones .st{width:clamp(90px,11vw,160px)}
+.ven-stage{gap:clamp(12px,2vw,30px)}
+.rail{padding-bottom:12px;margin-top:clamp(12px,1.6vw,22px)!important}
+.rail .zoom img{height:clamp(220px,20vw,300px)}
+
+/* Motores La Victoria */
+.mot-stage{grid-template-columns:1.35fr .65fr;gap:clamp(12px,2vw,28px)}
+.mot-posts{gap:clamp(6px,.9vw,12px)}
+.mot-posts .zoom:nth-child(2),.mot-posts .zoom:nth-child(5){transform:none}
+.mot-phones{gap:clamp(6px,1vw,14px)}
+.mot-phones .phone{width:44%}
+.mot-phones .phone:nth-child(2){margin-top:8%}
+
+
+/* Motores: mockup de dos teléfonos inclinados; las 5 historias van dentro de los teléfonos y cambian solas (pueden tapar un poco las publicaciones) */
+.c-mot #rail-mot{display:none!important}
+.c-mot .mot-phones{grid-column:2;grid-row:2/4;position:relative;display:block;align-self:stretch;margin:0;padding:0;overflow:visible;min-height:0;z-index:3}
+.c-mot .mot-phones .phone{position:absolute;margin:0!important;width:57%;transition:transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 34px 34px rgba(0,0,0,.55))}
+.c-mot .mot-phones .phone:nth-child(1){left:-13%;top:0;transform:perspective(1300px) rotateX(8deg) rotateY(18deg) rotateZ(-11deg);z-index:1}
+.c-mot .mot-phones .phone:nth-child(2){left:44%;top:28%;transform:perspective(1300px) rotateX(8deg) rotateY(-18deg) rotateZ(10deg);z-index:2}
+.c-mot .mot-phones .phone:hover{transform:perspective(1300px) rotateX(0) rotateY(0) rotateZ(0) scale(1.04);z-index:6}
+.mphone .fig img{position:absolute;inset:0;opacity:0;transition:opacity .7s ease}
+.mphone .fig img.a{opacity:1}
+.mphone .progress i:not(.on)::after{animation:none!important}
+.mphone .progress i::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.mphone .progress i.done::after{transform:scaleX(1)}
+.mphone .progress i.on::after{animation:fill 3.6s linear forwards!important}
+
+/* Devenalsa: teléfono con el perfil a la izquierda y cuadrícula de publicaciones a la derecha */
+.c-dev .wrap{display:block}
+.c-dev .dev-fan,.c-dev #rail-dev{display:none!important}
+.c-dev .chap-title{margin-bottom:clamp(14px,2vw,28px)!important}
+#devFeed{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;position:relative;width:100%}
+#devFeed .dphone{grid-column:1;justify-self:start;margin-right:clamp(-70px,-4.5vw,-40px);position:relative;z-index:4;width:clamp(250px,24.5vw,350px);filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))}
+#devFeed .dphone .phone{width:100%;transform:perspective(1500px) rotateY(15deg) rotateX(4deg) rotateZ(-3deg);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+#devFeed .dphone .phone:hover{transform:perspective(1500px) rotateY(0) rotateX(0) rotateZ(0)}
+#devFeed .dgrid{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,18px);padding-left:clamp(60px,5.5vw,90px)}
+#devFeed .dgrid .zoom{display:block;padding:0;border:0;background:none;border-radius:clamp(14px,1.5vw,22px);overflow:hidden;box-shadow:0 22px 34px rgba(0,0,0,.4);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+#devFeed .dgrid .zoom:hover{transform:translateY(-6px) scale(1.02)}
+#devFeed .dgrid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+#devFeed .feed{background:#fff}
+#devFeed .dprof{flex:1;overflow:hidden;color:#1b1b1f;font-family:var(--f-util)}
+#devFeed .ig-head{padding:4% 6% 3%}
+#devFeed .ig-head .av{width:24%;aspect-ratio:1;border-radius:50%;background:#3e1550;padding:4%;object-fit:contain;flex:none}
+#devFeed .ig-head b{font-size:clamp(.6rem,.95vw,.8rem)}
+#devFeed .dbio{padding:0 6% 3%;font-size:clamp(.42rem,.7vw,.6rem);line-height:1.3;color:#444}
+#devFeed .hl{padding:2% 5% 4%}
+#devFeed .hl img{aspect-ratio:1;object-fit:cover}
+#devFeed .ig-grid img{object-fit:cover}
+
+/* Mallas Valencia: mockup flotante (teléfono al centro y pantallas en perspectiva alrededor) */
+.c-mal{--pw:clamp(190px,19vw,270px)}
+.c-mal .mal-stage{display:block;position:relative;height:calc(var(--pw)*2.07 + 40px);perspective:1500px;perspective-origin:50% 45%}
+.c-mal .mal-col,.c-mal #malGrid{display:contents}
+.c-mal .mal-col .chap-title{position:absolute;left:0;top:0;margin:0!important;z-index:6;align-items:flex-start;text-align:left}
+.c-mal .mal-col .chap-title h3{justify-content:flex-start}
+.c-mal .mal-col .chap-title h3 img.blogo[alt*="Mallas"]{width:clamp(170px,16vw,230px)}
+.c-mal #malPhone{animation:malfloat 6s ease-in-out infinite;position:absolute;left:50%;top:20px;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 40px 40px rgba(0,8,40,.55))}
+.c-mal #malPhone .phone,.c-mal .mal-stage .feed-phone{width:var(--pw)}
+.c-mal #malGrid .zoom{position:absolute;display:block;width:clamp(120px,13.5vw,196px);padding:0;border:0;background:none;transform-style:preserve-3d;transform:none;transition:transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 28px 26px rgba(0,8,40,.5))}
+.c-mal #malGrid .zoom img{width:100%;height:auto;border-radius:clamp(12px,1.3vw,20px);border:1px solid rgba(255,255,255,.35)}
+.c-mal #malGrid .zoom:hover{transform:scale(1.06);z-index:9!important}
+@keyframes malfloat{50%{translate:0 -12px}}
+.c-mal #malGrid .zoom:nth-child(1){left:1%;top:48%;z-index:1}
+.c-mal #malGrid .zoom:nth-child(2){left:16%;top:27%;z-index:2}
+.c-mal #malGrid .zoom:nth-child(3){left:29.5%;top:58%;z-index:5;width:clamp(110px,12vw,172px)}
+.c-mal #malGrid .zoom:nth-child(4){left:68%;top:11%;z-index:2}
+.c-mal #malGrid .zoom:nth-child(5){left:83%;top:32%;z-index:1}
+.c-mal #malGrid .zoom:nth-child(6){left:57.5%;top:58%;z-index:5;width:clamp(110px,12vw,172px)}
+
+/* Material corporativo */
+.pills{margin-top:0}
+.case-goi,.case-qui{gap:clamp(14px,2.4vw,36px)}
+.case-polo{gap:clamp(10px,1.4vw,20px)}
+.case-polo .card:nth-child(2){margin-bottom:clamp(14px,2.6vw,36px)!important}
+.case-polo,.case-pin{max-width:880px;margin-inline:auto;width:100%}
+.case-goi .case-h,.case-qui .case-h{gap:clamp(10px,1.4vw,18px)}
+.case-key{max-width:620px}
+.case-key .card{padding:clamp(14px,2.2vw,30px)}
+.case-inf .case-h{margin-bottom:clamp(8px,1.4vw,18px);gap:12px}
+.case-pin .card.sm{transform:rotate(2.4deg)}
+
+/* Infinity: logo y texto a un lado, foto al otro */
+.case-inf{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(14px,2.4vw,36px);align-items:center}
+.case-inf .case-h{align-items:flex-start!important;text-align:left!important;margin-bottom:0!important;gap:clamp(10px,1.4vw,18px)!important}
+.case-inf .case-h h3{justify-content:flex-start!important}
+.case-inf .case-h p{max-width:30ch;text-align:justify!important;text-indent:var(--sangria)!important;-webkit-hyphens:auto!important;hyphens:auto!important}
+.case-inf .case-key{max-width:none;margin:0;width:100%}
+
+/* Contacto */
+.contact .logo{width:min(46%,300px);margin:clamp(14px,2vw,26px) auto}
+.foot{margin-top:clamp(20px,2.6vw,36px)}
+}
+</style>
+
+<script id="motores-historias">
+/* Escritorio: los dos teléfonos de Motores muestran las 5 historias (3 + 2) y cambian solas. En móvil queda como estaba. */
+(()=>{const box=document.getElementById('motPhones');if(!box||typeof of==='undefined')return;
+ const mq=matchMedia('(min-width:1000px)');const orig=box.innerHTML;let timers=[];const NAME='Motores La Victoria';
+ const html=g=>`<div class="phone mphone"><div class="screen"><div class="story-ui"><div class="fig">${g.map((it,i)=>`<img class="${i?'':'a'}" src="${src(it)}" alt="Historia de ${NAME}">`).join('')}</div></div>
+ <div class="bar-top"><div class="progress">${g.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><div class="who"><b>${ini(NAME)}</b>${NAME}</div></div>
+ <div class="reply"><span>Enviar mensaje</span>${SVG.heart.replace('<svg','<svg fill="none" stroke="#fff" stroke-width="1.8"')}</div></div></div>`;
+ function start(ph,delay){const imgs=[...ph.querySelectorAll('.fig img')],bars=[...ph.querySelectorAll('.progress i')];let k=0;
+  const show=n=>{imgs.forEach((im,i)=>im.classList.toggle('a',i===n));bars.forEach((b,i)=>{b.classList.remove('on','done');if(i<n)b.classList.add('done');if(i===n){void b.offsetWidth;b.classList.add('on')}})};
+  setTimeout(()=>{timers.push(setInterval(()=>{if(document.hidden)return;k=(k+1)%imgs.length;show(k)},3600))},delay)}
+ function apply(){timers.forEach(clearInterval);timers=[];
+  if(mq.matches){const st=of('mot','story');const gs=[[st[1],st[0],st[2]],[st[4],st[3]]].map(g=>g.filter(Boolean)).filter(g=>g.length);
+   box.innerHTML=gs.map(html).join('');box.querySelectorAll('.mphone').forEach((p,i)=>start(p,i*1500))}
+  else box.innerHTML=orig}
+ mq.addEventListener('change',apply);apply();})();
+</script>
+<script id="devenalsa-feed">
+/* Escritorio: Devenalsa como perfil de Instagram en un teléfono (izquierda) + cuadrícula de publicaciones (derecha). En móvil queda como estaba. */
+(()=>{const wrap=document.querySelector('#dev .wrap');if(!wrap||typeof MAN==='undefined')return;
+ const mq=matchMedia('(min-width:1000px)');let el=null;const NAME='Devenalsa';
+ function build(){const posts=MAN.dev.filter(i=>i.k==='post'),logo=document.querySelector('#dev .chap-title img.blogo');
+  if(!posts.length||!logo)return null;
+  const d=document.createElement('div');d.id='devFeed';
+  const lab=['Tips','Productos','Calidad','Planta','Recetas'];
+  d.innerHTML=`<div class="dphone"><div class="phone"><div class="screen"><div class="feed">
+   <div class="feed-top"><b>devenalsa</b><span>☰</span></div>
+   <div class="dprof"><div class="ig-head"><img class="av" src="${logo.src}" alt=""><div><b>${NAME}</b><div class="ig-stats"><span><b>${posts.length}</b> Posts</span><span><b>2K</b> Seguidores</span></div></div></div>
+   <div class="dbio">Deshidratadora Venezolana de Alimentos S.A.<br>Frutas y hortalizas deshidratadas.</div>
+   <div class="hl">${posts.slice(0,5).map((it,i)=>`<div><img src="${src(it)}" alt="">${lab[i]}</div>`).join('')}</div>
+   <div class="ig-grid">${posts.slice(0,9).map(it=>`<img src="${src(it)}" alt="Publicación de ${NAME}">`).join('')}</div></div>
+   <div class="feed-nav"><i></i><i></i><i></i><i></i><i></i></div></div></div></div></div>
+   <div class="dgrid">${posts.slice(0,6).map(it=>zoomBtn(it,'dev')).join('')}</div>`;
+  return d}
+ function apply(){if(el){el.remove();el=null}if(!mq.matches)return;el=build();if(el)wrap.insertBefore(el,document.getElementById('all-dev'))}
+ mq.addEventListener('change',apply);apply();})();
+</script>
 </body></html>
